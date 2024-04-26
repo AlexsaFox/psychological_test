@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practic_2.core
 {
-    internal class TIntensityItem
+    public class TIntensityItem
     {
         public int minimal;
         public string description;

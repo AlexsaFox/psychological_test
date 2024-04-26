@@ -10,7 +10,7 @@ using static System.Windows.Forms.Design.AxImporter;
 
 namespace Practic_2.core
 {
-    internal class TTestLoader
+    public class TTestLoader
     {
         public string fileName;
         public string data;

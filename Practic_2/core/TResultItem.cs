@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practic_2.core
 {
-    internal class TResultItem
+    public class TResultItem
     {
         public int score;
         public TPredisposition predisposition;

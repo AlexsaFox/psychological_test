@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Practic_2.core
 {
-    internal class TPupil
+    public class TPupil
     {
-        public required string name;
-        public required string surname;
-        public required int age;
-        public required int grade;
+        public string name;
+        public string surname;
+        public int age;
+        public int grade;
 
         public TPupil(string name, string surname, int age, int grade)
         {

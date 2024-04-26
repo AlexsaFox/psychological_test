@@ -7,7 +7,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Practic_2.core
 {
-    internal class TTest
+    public class TTest
     {
         public string title;
         public string description;

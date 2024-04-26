@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practic_2.core
 {
-    internal class TPredisposition
+    public class TPredisposition
     {
         private static int prepositions_count = 0;
         public int id;

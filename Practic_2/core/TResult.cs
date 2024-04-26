@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practic_2.core
 {
-    internal class TResult
+    public class TResult
     {
         public List<TResultItem> data;
         

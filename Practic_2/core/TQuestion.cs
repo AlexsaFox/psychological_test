@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practic_2.core
 {
-    internal class TQuestion
+    public class TQuestion
     {
         public string text;
         public List<TAnswer> answers;

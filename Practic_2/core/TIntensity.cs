@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practic_2.core
 {
-    internal class TIntensity
+    public class TIntensity
     {
         public List<TIntensityItem> data;
 

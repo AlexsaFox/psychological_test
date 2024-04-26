@@ -7,7 +7,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Practic_2.core
 {
-    internal class TTestFact
+    public class TTestFact
     {
         public required TPupil pupil;
         public required DateTime datetime;
