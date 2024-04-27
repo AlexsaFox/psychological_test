@@ -9,10 +9,10 @@ namespace Practic_2.core
 {
     public class TTestFact
     {
-        public required TPupil pupil;
-        public required DateTime datetime;
-        public required TTest test;
-        public required List<TAnswer> chosen_answers;
+        public TPupil pupil;
+        public DateTime datetime;
+        public TTest test;
+        public List<TAnswer> chosen_answers;
         
         public TTestFact(TPupil pupil, TTest test)
         {
