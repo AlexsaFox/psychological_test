@@ -9,6 +9,11 @@ namespace Practic_2.core
     public class TResult
     {
         public List<TResultItem> data;
+
+        public TResult() 
+        {
+            data = new List<TResultItem>();
+        }
         
         // полчение результата по предрасположенности
         public TResultItem GetResultItemByPredisposition(TPredisposition predisposition) 

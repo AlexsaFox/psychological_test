@@ -10,6 +10,11 @@ namespace Practic_2.core
     {
         public List<TIntensityItem> data;
 
+        public TIntensity() 
+        {
+            data = new List<TIntensityItem>();
+        }
+
         // добавление интенсивности
         public void AddItem(int minimal, string description)
         {

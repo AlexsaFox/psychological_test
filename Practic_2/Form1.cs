@@ -22,8 +22,11 @@ namespace Practic_2
             views.Add(group_start);
             views.Add(group_description);
             views.Add(group_question);
-
+            views.Add(group_result);
+            init_progressBar();
             init_views();
+
+            
         }
 
         private void init_views()
@@ -35,6 +38,16 @@ namespace Practic_2
                 views[i].Height = this.Size.Height - label_test_title.Height;
                 views[i].Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom);
             }
+        }
+
+        private void init_progressBar()
+        {
+            progressBar_questions.Maximum = test.questions.Count;
+            progressBar_questions.Width = Width;
+            progressBar_questions.Height = 40;
+            progressBar_questions.MaximumSize = new Size(2160, 40);
+            progressBar_questions.Location = new Point(0, group_question.Height - progressBar_questions.Height);
+            progressBar_questions.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Bottom | AnchorStyles.Top);
         }
 
         private void button_next_Click(object sender, EventArgs e)
@@ -54,10 +67,7 @@ namespace Practic_2
                 label_count_questions.Text = $"{test.questions.Count} вопроса";
                 group_start.Visible = false;
                 group_description.Visible = true;
-
-
             }
-
         }
 
         private void button_start_Click(object sender, EventArgs e)
@@ -84,9 +94,10 @@ namespace Practic_2
 
         private void button_answer_Click(object sender, EventArgs e)
         {
-            if (label_answer_1.Checked == true || label_answer_2.Checked == true || label_answer_3.Checked == true) 
+            if (label_answer_1.Checked == true || label_answer_2.Checked == true || label_answer_3.Checked == true)
             {
                 find_and_add_checked(test.questions[testFact.chosen_answers.Count].answers);
+                progressBar_questions.Value++;
             }
             else
             {
@@ -101,13 +112,20 @@ namespace Practic_2
             {
                 // логика завершения
                 MessageBox.Show("FINISH");
+                group_question.Visible = false;
+                group_result.Visible = true;
+
+                TTestSave testSave = new TTestSave(testFact);
+                MessageBox.Show(testSave.Save());
+                
+
             }
-            
+
         }
 
         public void find_and_add_checked(List<TAnswer> answers)
         {
-            if (label_answer_1.Checked) 
+            if (label_answer_1.Checked)
             {
                 testFact.AddChosenAnswer(answers[0]);
                 label_answer_1.Checked = false;
@@ -122,6 +140,12 @@ namespace Practic_2
                 testFact.AddChosenAnswer(answers[2]);
                 label_answer_3.Checked = false;
             }
+        }
+
+        private void debug_Click(object sender, EventArgs e)
+        {
+            group_question.Visible = false;
+            group_result.Visible = true;
         }
     }
 }

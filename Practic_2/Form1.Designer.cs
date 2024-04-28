@@ -31,7 +31,6 @@ namespace Practic_2
         private void InitializeComponent()
         {
             group_start = new GroupBox();
-            group_input_objects = new GroupBox();
             label_name = new Label();
             edit_name = new TextBox();
             label_surname = new Label();
@@ -42,29 +41,43 @@ namespace Practic_2
             label_age = new Label();
             button_next = new Button();
             group_description = new GroupBox();
-            button_start = new Button();
             label_count_questions = new Label();
             label_description = new Label();
+            button_start = new Button();
             label_test_title = new Label();
             group_question = new GroupBox();
+            debug = new Button();
+            progressBar_questions = new ProgressBar();
             button_answer = new Button();
             label_answer_3 = new RadioButton();
             label_answer_2 = new RadioButton();
             label_answer_1 = new RadioButton();
             label_question_text = new Label();
+            group_result = new GroupBox();
+            button_more_result = new Button();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            label_result = new Label();
             group_start.SuspendLayout();
-            group_input_objects.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)edit_grade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)edit_age).BeginInit();
             group_description.SuspendLayout();
             group_question.SuspendLayout();
+            group_result.SuspendLayout();
             SuspendLayout();
             // 
             // group_start
             // 
-            group_start.Controls.Add(group_input_objects);
+            group_start.Controls.Add(group_result);
+            group_start.Controls.Add(label_name);
+            group_start.Controls.Add(edit_name);
+            group_start.Controls.Add(label_surname);
+            group_start.Controls.Add(label_grade);
+            group_start.Controls.Add(edit_surname);
+            group_start.Controls.Add(edit_grade);
+            group_start.Controls.Add(edit_age);
+            group_start.Controls.Add(label_age);
             group_start.Controls.Add(button_next);
-            group_start.Location = new Point(942, 9);
+            group_start.Location = new Point(854, 51);
             group_start.Margin = new Padding(0);
             group_start.Name = "group_start";
             group_start.Padding = new Padding(150, 10, 150, 70);
@@ -72,45 +85,25 @@ namespace Practic_2
             group_start.TabIndex = 0;
             group_start.TabStop = false;
             // 
-            // group_input_objects
-            // 
-            group_input_objects.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            group_input_objects.Controls.Add(label_name);
-            group_input_objects.Controls.Add(edit_name);
-            group_input_objects.Controls.Add(label_surname);
-            group_input_objects.Controls.Add(label_grade);
-            group_input_objects.Controls.Add(edit_surname);
-            group_input_objects.Controls.Add(edit_grade);
-            group_input_objects.Controls.Add(edit_age);
-            group_input_objects.Controls.Add(label_age);
-            group_input_objects.Location = new Point(146, 48);
-            group_input_objects.Margin = new Padding(0);
-            group_input_objects.MaximumSize = new Size(900, 300);
-            group_input_objects.Name = "group_input_objects";
-            group_input_objects.Padding = new Padding(0);
-            group_input_objects.Size = new Size(420, 250);
-            group_input_objects.TabIndex = 12;
-            group_input_objects.TabStop = false;
-            // 
             // label_name
             // 
             label_name.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_name.AutoSize = true;
             label_name.Font = new Font("Segoe UI", 20F);
-            label_name.Location = new Point(80, 23);
+            label_name.Location = new Point(218, 51);
             label_name.Name = "label_name";
             label_name.Size = new Size(81, 46);
-            label_name.TabIndex = 1;
+            label_name.TabIndex = 12;
             label_name.Text = "имя";
             // 
             // edit_name
             // 
             edit_name.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             edit_name.Font = new Font("Segoe UI", 20F);
-            edit_name.Location = new Point(170, 20);
+            edit_name.Location = new Point(308, 48);
             edit_name.Name = "edit_name";
             edit_name.Size = new Size(223, 52);
-            edit_name.TabIndex = 5;
+            edit_name.TabIndex = 16;
             edit_name.Text = "alex";
             // 
             // label_surname
@@ -118,10 +111,10 @@ namespace Practic_2
             label_surname.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_surname.AutoSize = true;
             label_surname.Font = new Font("Segoe UI", 20F);
-            label_surname.Location = new Point(2, 81);
+            label_surname.Location = new Point(140, 109);
             label_surname.Name = "label_surname";
             label_surname.Size = new Size(159, 46);
-            label_surname.TabIndex = 2;
+            label_surname.TabIndex = 13;
             label_surname.Text = "фамилия";
             // 
             // label_grade
@@ -129,40 +122,40 @@ namespace Practic_2
             label_grade.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_grade.AutoSize = true;
             label_grade.Font = new Font("Segoe UI", 20F);
-            label_grade.Location = new Point(57, 194);
+            label_grade.Location = new Point(195, 222);
             label_grade.Name = "label_grade";
             label_grade.Size = new Size(104, 46);
-            label_grade.TabIndex = 4;
+            label_grade.TabIndex = 15;
             label_grade.Text = "класс";
             // 
             // edit_surname
             // 
             edit_surname.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             edit_surname.Font = new Font("Segoe UI", 20F);
-            edit_surname.Location = new Point(170, 78);
+            edit_surname.Location = new Point(308, 106);
             edit_surname.Name = "edit_surname";
             edit_surname.Size = new Size(223, 52);
-            edit_surname.TabIndex = 6;
+            edit_surname.TabIndex = 17;
             edit_surname.Text = "fox";
             // 
             // edit_grade
             // 
             edit_grade.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             edit_grade.Font = new Font("Segoe UI", 20F);
-            edit_grade.Location = new Point(170, 194);
+            edit_grade.Location = new Point(308, 222);
             edit_grade.Name = "edit_grade";
             edit_grade.Size = new Size(223, 52);
-            edit_grade.TabIndex = 10;
+            edit_grade.TabIndex = 19;
             edit_grade.Value = new decimal(new int[] { 12, 0, 0, 0 });
             // 
             // edit_age
             // 
             edit_age.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             edit_age.Font = new Font("Segoe UI", 20F);
-            edit_age.Location = new Point(171, 136);
+            edit_age.Location = new Point(309, 164);
             edit_age.Name = "edit_age";
             edit_age.Size = new Size(222, 52);
-            edit_age.TabIndex = 9;
+            edit_age.TabIndex = 18;
             edit_age.Value = new decimal(new int[] { 18, 0, 0, 0 });
             // 
             // label_age
@@ -170,10 +163,10 @@ namespace Practic_2
             label_age.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_age.AutoSize = true;
             label_age.Font = new Font("Segoe UI", 20F);
-            label_age.Location = new Point(21, 138);
+            label_age.Location = new Point(159, 166);
             label_age.Name = "label_age";
             label_age.Size = new Size(140, 46);
-            label_age.TabIndex = 3;
+            label_age.TabIndex = 14;
             label_age.Text = "возраст";
             // 
             // button_next
@@ -192,35 +185,23 @@ namespace Practic_2
             // 
             // group_description
             // 
-            group_description.Controls.Add(button_start);
             group_description.Controls.Add(label_count_questions);
             group_description.Controls.Add(label_description);
-            group_description.Location = new Point(942, 508);
+            group_description.Controls.Add(button_start);
+            group_description.Location = new Point(877, 520);
             group_description.Name = "group_description";
-            group_description.Padding = new Padding(150, 10, 150, 70);
+            group_description.Padding = new Padding(150, 10, 150, 10);
             group_description.Size = new Size(878, 474);
             group_description.TabIndex = 1;
             group_description.TabStop = false;
             group_description.Visible = false;
             // 
-            // button_start
-            // 
-            button_start.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            button_start.Font = new Font("Segoe UI", 20F);
-            button_start.Location = new Point(280, 394);
-            button_start.Margin = new Padding(0);
-            button_start.Name = "button_start";
-            button_start.Size = new Size(300, 60);
-            button_start.TabIndex = 2;
-            button_start.Text = "НАЧАТЬ ТЕСТ";
-            button_start.UseVisualStyleBackColor = true;
-            button_start.Click += button_start_Click;
-            // 
             // label_count_questions
             // 
-            label_count_questions.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label_count_questions.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label_count_questions.Font = new Font("Segoe UI", 15F);
-            label_count_questions.Location = new Point(120, 336);
+            label_count_questions.Location = new Point(120, 396);
+            label_count_questions.Margin = new Padding(0);
             label_count_questions.Name = "label_count_questions";
             label_count_questions.Size = new Size(600, 46);
             label_count_questions.TabIndex = 1;
@@ -232,11 +213,25 @@ namespace Practic_2
             label_description.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_description.Font = new Font("Segoe UI", 20F);
             label_description.Location = new Point(120, 22);
+            label_description.Margin = new Padding(0);
             label_description.Name = "label_description";
             label_description.Size = new Size(600, 280);
             label_description.TabIndex = 0;
             label_description.Text = "desc";
             label_description.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button_start
+            // 
+            button_start.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            button_start.Font = new Font("Segoe UI", 20F);
+            button_start.Location = new Point(280, 454);
+            button_start.Margin = new Padding(0);
+            button_start.Name = "button_start";
+            button_start.Size = new Size(300, 60);
+            button_start.TabIndex = 2;
+            button_start.Text = "НАЧАТЬ ТЕСТ";
+            button_start.UseVisualStyleBackColor = true;
+            button_start.Click += button_start_Click;
             // 
             // label_test_title
             // 
@@ -251,19 +246,42 @@ namespace Practic_2
             // 
             // group_question
             // 
+            group_question.Controls.Add(debug);
+            group_question.Controls.Add(progressBar_questions);
             group_question.Controls.Add(button_answer);
             group_question.Controls.Add(label_answer_3);
             group_question.Controls.Add(label_answer_2);
             group_question.Controls.Add(label_answer_1);
             group_question.Controls.Add(label_question_text);
             group_question.Font = new Font("Segoe UI", 20F);
-            group_question.Location = new Point(8, 82);
+            group_question.Location = new Point(25, 71);
             group_question.Name = "group_question";
             group_question.Padding = new Padding(50, 10, 50, 30);
-            group_question.Size = new Size(928, 521);
+            group_question.Size = new Size(928, 539);
             group_question.TabIndex = 3;
             group_question.TabStop = false;
             group_question.Visible = false;
+            // 
+            // debug
+            // 
+            debug.Font = new Font("Segoe UI", 10F);
+            debug.Location = new Point(739, 431);
+            debug.Name = "debug";
+            debug.Size = new Size(74, 53);
+            debug.TabIndex = 6;
+            debug.Text = "debug";
+            debug.UseVisualStyleBackColor = true;
+            debug.Click += debug_Click;
+            // 
+            // progressBar_questions
+            // 
+            progressBar_questions.BackColor = SystemColors.Control;
+            progressBar_questions.Location = new Point(0, 503);
+            progressBar_questions.Margin = new Padding(0);
+            progressBar_questions.Maximum = 24;
+            progressBar_questions.Name = "progressBar_questions";
+            progressBar_questions.Size = new Size(924, 36);
+            progressBar_questions.TabIndex = 5;
             // 
             // button_answer
             // 
@@ -317,10 +335,49 @@ namespace Practic_2
             label_question_text.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_question_text.Location = new Point(44, 35);
             label_question_text.Name = "label_question_text";
-            label_question_text.Size = new Size(831, 95);
+            label_question_text.Size = new Size(789, 95);
             label_question_text.TabIndex = 0;
             label_question_text.Text = "*question_text*";
             label_question_text.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // group_result
+            // 
+            group_result.Controls.Add(button_more_result);
+            group_result.Controls.Add(flowLayoutPanel1);
+            group_result.Controls.Add(label_result);
+            group_result.Font = new Font("Segoe UI", 20F);
+            group_result.Location = new Point(44, 189);
+            group_result.Name = "group_result";
+            group_result.Size = new Size(924, 538);
+            group_result.TabIndex = 4;
+            group_result.TabStop = false;
+            group_result.Visible = false;
+            // 
+            // button_more_result
+            // 
+            button_more_result.Location = new Point(39, 456);
+            button_more_result.Name = "button_more_result";
+            button_more_result.Size = new Size(844, 56);
+            button_more_result.TabIndex = 2;
+            button_more_result.Text = "ЕЩЁ РЕЗУЛЬТАТЫ";
+            button_more_result.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Location = new Point(42, 89);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(840, 321);
+            flowLayoutPanel1.TabIndex = 1;
+            // 
+            // label_result
+            // 
+            label_result.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label_result.Location = new Point(3, 23);
+            label_result.Name = "label_result";
+            label_result.Size = new Size(915, 52);
+            label_result.TabIndex = 0;
+            label_result.Text = "РЕЗУЛЬТАТ";
+            label_result.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FormMain
             // 
@@ -334,38 +391,43 @@ namespace Practic_2
             Name = "FormMain";
             Text = "Form1";
             group_start.ResumeLayout(false);
-            group_input_objects.ResumeLayout(false);
-            group_input_objects.PerformLayout();
+            group_start.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)edit_grade).EndInit();
             ((System.ComponentModel.ISupportInitialize)edit_age).EndInit();
             group_description.ResumeLayout(false);
             group_question.ResumeLayout(false);
+            group_result.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private GroupBox group_start;
-        private Label label_grade;
-        private Label label_age;
-        private Label label_surname;
-        private Label label_name;
-        private TextBox edit_surname;
-        private TextBox edit_name;
         private Button button_next;
-        private NumericUpDown edit_grade;
-        private NumericUpDown edit_age;
         private GroupBox group_description;
         private Label label_description;
         private Label label_test_title;
         private Button button_start;
         private Label label_count_questions;
-        private GroupBox group_input_objects;
         private GroupBox group_question;
         private Button button_answer;
         private RadioButton label_answer_3;
         private RadioButton label_answer_2;
         private RadioButton label_answer_1;
         private Label label_question_text;
+        private ProgressBar progressBar_questions;
+        private GroupBox group_result;
+        private Label label_result;
+        private Button debug;
+        private Label label_name;
+        private TextBox edit_name;
+        private Label label_surname;
+        private Label label_grade;
+        private TextBox edit_surname;
+        private NumericUpDown edit_grade;
+        private NumericUpDown edit_age;
+        private Label label_age;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Button button_more_result;
     }
 }

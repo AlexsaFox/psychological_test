@@ -37,6 +37,7 @@ namespace Practic_2.core
                 FillQuestions(root, test);
                 FillPredispositions(root, test);
                 FillMapper(root, test);
+                FillIntesity(root, test);
                 return test;
             }
         }
@@ -95,6 +96,17 @@ namespace Practic_2.core
                 int predispositionId = mapperElement.GetProperty("predisposition").GetInt32();
                 // ПРОВЕРКА ID - (1, count)
                 test.AddMapperItem(answersId[answerId - 1], predispositionsId[predispositionId - 1]);
+            }
+        }
+
+        public void FillIntesity(JsonElement root, TTest test)
+        {
+            JsonElement.ArrayEnumerator intesity = root.GetProperty("intensity").EnumerateArray();
+            foreach (JsonElement intensityItem in intesity)
+            {
+                int minimal = intensityItem.GetProperty("minimal").GetInt32();
+                string description = intensityItem.GetProperty("description").GetString();
+                test.intensity.AddItem(minimal, description);
             }
         }
     }
