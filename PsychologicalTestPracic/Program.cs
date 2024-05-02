@@ -1,6 +1,4 @@
-using Practic_2.core;
-
-namespace Practic_2
+namespace PsychologicalTestPracic
 {
     internal static class Program
     {
@@ -14,7 +12,6 @@ namespace Practic_2
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new FormMain());
-            
         }
     }
 }
