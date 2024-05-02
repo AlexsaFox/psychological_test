@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             label_Title = new Label();
             groupBox_Start = new GroupBox();
             edit_Grade = new NumericUpDown();
@@ -47,11 +52,27 @@
             radioButton_AnswerText1 = new RadioButton();
             label_QuestionText = new Label();
             groupBox_Result = new GroupBox();
+            label_filepath = new TextBox();
+            label_PredispositionDescription = new Label();
+            label_PredispositionScore = new Label();
+            label_PredispositionName = new Label();
+            button_MoreResult = new Button();
+            label_ResultTitle = new Label();
+            groupBox_ResultMore = new GroupBox();
+            dataGridView = new DataGridView();
+            label_ResultTitle_more = new Label();
+            CollumnName = new DataGridViewTextBoxColumn();
+            Score = new DataGridViewTextBoxColumn();
+            ScoreDescription = new DataGridViewTextBoxColumn();
+            Description = new DataGridViewTextBoxColumn();
             groupBox_Start.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)edit_Grade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)edit_Age).BeginInit();
             groupBox_Description.SuspendLayout();
             groupBox_Question.SuspendLayout();
+            groupBox_Result.SuspendLayout();
+            groupBox_ResultMore.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
             // 
             // label_Title
@@ -60,7 +81,7 @@
             label_Title.Font = new Font("Segoe UI", 30F);
             label_Title.Location = new Point(-7, 0);
             label_Title.Name = "label_Title";
-            label_Title.Size = new Size(1028, 85);
+            label_Title.Size = new Size(1524, 85);
             label_Title.TabIndex = 0;
             label_Title.Text = "*Test_name*";
             label_Title.TextAlign = ContentAlignment.MiddleCenter;
@@ -279,20 +300,175 @@
             // 
             // groupBox_Result
             // 
+            groupBox_Result.Controls.Add(label_filepath);
+            groupBox_Result.Controls.Add(label_PredispositionDescription);
+            groupBox_Result.Controls.Add(label_PredispositionScore);
+            groupBox_Result.Controls.Add(label_PredispositionName);
+            groupBox_Result.Controls.Add(button_MoreResult);
+            groupBox_Result.Controls.Add(label_ResultTitle);
             groupBox_Result.Font = new Font("Segoe UI", 20F);
             groupBox_Result.Location = new Point(520, 692);
             groupBox_Result.Name = "groupBox_Result";
-            groupBox_Result.Padding = new Padding(40, 50, 40, 3);
+            groupBox_Result.Padding = new Padding(0);
             groupBox_Result.Size = new Size(450, 438);
             groupBox_Result.TabIndex = 6;
             groupBox_Result.TabStop = false;
             groupBox_Result.Visible = false;
             // 
+            // label_filepath
+            // 
+            label_filepath.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label_filepath.BorderStyle = BorderStyle.None;
+            label_filepath.Font = new Font("Segoe UI", 10F);
+            label_filepath.Location = new Point(3, 388);
+            label_filepath.Name = "label_filepath";
+            label_filepath.ReadOnly = true;
+            label_filepath.Size = new Size(444, 23);
+            label_filepath.TabIndex = 5;
+            // 
+            // label_PredispositionDescription
+            // 
+            label_PredispositionDescription.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label_PredispositionDescription.Font = new Font("Segoe UI", 15F);
+            label_PredispositionDescription.Location = new Point(95, 211);
+            label_PredispositionDescription.Name = "label_PredispositionDescription";
+            label_PredispositionDescription.Size = new Size(296, 94);
+            label_PredispositionDescription.TabIndex = 4;
+            label_PredispositionDescription.Text = "*pred_desc_1*";
+            label_PredispositionDescription.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label_PredispositionScore
+            // 
+            label_PredispositionScore.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label_PredispositionScore.Font = new Font("Segoe UI", 10F);
+            label_PredispositionScore.Location = new Point(95, 182);
+            label_PredispositionScore.Name = "label_PredispositionScore";
+            label_PredispositionScore.Size = new Size(296, 29);
+            label_PredispositionScore.TabIndex = 3;
+            label_PredispositionScore.Text = "*pred_score_1*";
+            label_PredispositionScore.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label_PredispositionName
+            // 
+            label_PredispositionName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label_PredispositionName.Font = new Font("Segoe UI", 15F);
+            label_PredispositionName.Location = new Point(95, 116);
+            label_PredispositionName.Name = "label_PredispositionName";
+            label_PredispositionName.Size = new Size(296, 52);
+            label_PredispositionName.TabIndex = 2;
+            label_PredispositionName.Text = "*pred_name_1*";
+            label_PredispositionName.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button_MoreResult
+            // 
+            button_MoreResult.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            button_MoreResult.BackColor = SystemColors.ButtonHighlight;
+            button_MoreResult.Font = new Font("Segoe UI", 20F);
+            button_MoreResult.Location = new Point(60, 323);
+            button_MoreResult.Name = "button_MoreResult";
+            button_MoreResult.Size = new Size(361, 59);
+            button_MoreResult.TabIndex = 1;
+            button_MoreResult.Text = "ЕЩЁ";
+            button_MoreResult.UseVisualStyleBackColor = false;
+            button_MoreResult.Click += button_MoreResult_Click;
+            // 
+            // label_ResultTitle
+            // 
+            label_ResultTitle.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label_ResultTitle.Location = new Point(3, 26);
+            label_ResultTitle.Name = "label_ResultTitle";
+            label_ResultTitle.Size = new Size(444, 63);
+            label_ResultTitle.TabIndex = 0;
+            label_ResultTitle.Text = "РЕЗУЛЬТАТ";
+            label_ResultTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // groupBox_ResultMore
+            // 
+            groupBox_ResultMore.Controls.Add(dataGridView);
+            groupBox_ResultMore.Controls.Add(label_ResultTitle_more);
+            groupBox_ResultMore.Font = new Font("Segoe UI", 20F);
+            groupBox_ResultMore.Location = new Point(1012, 692);
+            groupBox_ResultMore.Name = "groupBox_ResultMore";
+            groupBox_ResultMore.Padding = new Padding(0);
+            groupBox_ResultMore.Size = new Size(450, 438);
+            groupBox_ResultMore.TabIndex = 7;
+            groupBox_ResultMore.TabStop = false;
+            groupBox_ResultMore.Visible = false;
+            // 
+            // dataGridView
+            // 
+            dataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 15F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { CollumnName, Score, ScoreDescription, Description });
+            dataGridView.Location = new Point(3, 116);
+            dataGridView.Name = "dataGridView";
+            dataGridView.RowHeadersWidth = 51;
+            dataGridView.Size = new Size(447, 260);
+            dataGridView.TabIndex = 10;
+            // 
+            // label_ResultTitle_more
+            // 
+            label_ResultTitle_more.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label_ResultTitle_more.Location = new Point(3, 50);
+            label_ResultTitle_more.Name = "label_ResultTitle_more";
+            label_ResultTitle_more.Size = new Size(444, 63);
+            label_ResultTitle_more.TabIndex = 0;
+            label_ResultTitle_more.Text = "РЕЗУЛЬТАТ";
+            label_ResultTitle_more.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // CollumnName
+            // 
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            CollumnName.DefaultCellStyle = dataGridViewCellStyle2;
+            CollumnName.HeaderText = "Предрасположенность";
+            CollumnName.MinimumWidth = 6;
+            CollumnName.Name = "CollumnName";
+            // 
+            // Score
+            // 
+            Score.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10F);
+            Score.DefaultCellStyle = dataGridViewCellStyle3;
+            Score.HeaderText = "Результат";
+            Score.MinimumWidth = 6;
+            Score.Name = "Score";
+            Score.Width = 153;
+            // 
+            // ScoreDescription
+            // 
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            ScoreDescription.DefaultCellStyle = dataGridViewCellStyle4;
+            ScoreDescription.HeaderText = "Расшифровка результата";
+            ScoreDescription.MinimumWidth = 6;
+            ScoreDescription.Name = "ScoreDescription";
+            // 
+            // Description
+            // 
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            Description.DefaultCellStyle = dataGridViewCellStyle5;
+            Description.HeaderText = "Описание";
+            Description.MinimumWidth = 6;
+            Description.Name = "Description";
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1010, 1175);
+            ClientSize = new Size(1506, 1175);
+            Controls.Add(groupBox_ResultMore);
             Controls.Add(groupBox_Result);
             Controls.Add(groupBox_Question);
             Controls.Add(groupBox_Description);
@@ -307,6 +483,10 @@
             ((System.ComponentModel.ISupportInitialize)edit_Age).EndInit();
             groupBox_Description.ResumeLayout(false);
             groupBox_Question.ResumeLayout(false);
+            groupBox_Result.ResumeLayout(false);
+            groupBox_Result.PerformLayout();
+            groupBox_ResultMore.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
         }
 
@@ -332,5 +512,21 @@
         public ProgressBar progressBar_Questions;
         private ProgressBar progressBar1;
         private GroupBox groupBox_Result;
+        private Label label_ResultTitle;
+        private Label label_PredispositionDescription;
+        private Label label_PredispositionScore;
+        private Label label_PredispositionName;
+        private Button button_MoreResult;
+        private GroupBox groupBox_ResultMore;
+        private Label label2;
+        private Label label3;
+        private Button button1;
+        private Label label_ResultTitle_more;
+        private DataGridView dataGridView;
+        private TextBox label_filepath;
+        private DataGridViewTextBoxColumn CollumnName;
+        private DataGridViewTextBoxColumn Score;
+        private DataGridViewTextBoxColumn ScoreDescription;
+        private DataGridViewTextBoxColumn Description;
     }
 }

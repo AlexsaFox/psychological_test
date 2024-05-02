@@ -105,8 +105,9 @@ namespace Practic_2.core
             foreach (JsonElement intensityItem in intesity)
             {
                 int minimal = intensityItem.GetProperty("minimal").GetInt32();
+                int maximal = intensityItem.GetProperty("maximal").GetInt32();
                 string description = intensityItem.GetProperty("description").GetString();
-                test.intensity.AddItem(minimal, description);
+                test.intensity.AddItem(minimal, maximal, description);
             }
         }
     }

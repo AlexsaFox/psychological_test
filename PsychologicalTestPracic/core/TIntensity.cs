@@ -16,7 +16,7 @@ namespace Practic_2.core
         }
 
         // добавление интенсивности
-        public void AddItem(int minimal, string description)
+        public void AddItem(int minimal, int maximal, string description)
         {
             if (data.Count == 0)
             {
@@ -40,7 +40,7 @@ namespace Practic_2.core
                     throw new Exception(String.Format("This intensivity - \"{0}\" is lover than previous one", description));
                 }
             }
-            TIntensityItem item = new TIntensityItem(minimal, description);
+            TIntensityItem item = new TIntensityItem(minimal, maximal, description);
             this.data.Add(item);
         }
 
@@ -61,6 +61,11 @@ namespace Practic_2.core
                 {
                     return data[i - 1];
                 }
+                
+            }
+            if (score <= data.Last().maximal)
+            {
+                return data.Last();
             }
             throw new Exception(String.Format("This score - \"{0}\" was not found", score));
         }

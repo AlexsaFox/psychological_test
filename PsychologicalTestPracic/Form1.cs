@@ -1,4 +1,6 @@
 ﻿using Practic_2.core;
+using System.Diagnostics;
+using System.IO;
 
 namespace PsychologicalTestPracic
 {
@@ -9,6 +11,8 @@ namespace PsychologicalTestPracic
         public List<GroupBox> views;
         public List<RadioButton> answersVariants;
         public TTestFact testFact;
+        public TTestSave testSave;
+        public TResult result;
 
         public FormMain()
         {
@@ -24,7 +28,8 @@ namespace PsychologicalTestPracic
             views.Add(groupBox_Start);
             views.Add(groupBox_Description);
             views.Add(groupBox_Question);
-            //views.Add(group_result);
+            views.Add(groupBox_Result);
+            views.Add(groupBox_ResultMore);
             init_progressBar();
             answersVariants = [radioButton_AnswerText1, radioButton_AnswerText2, radioButton_AnswerText3];
             init_views();
@@ -121,12 +126,29 @@ namespace PsychologicalTestPracic
             }
             else
             {
+
                 //MessageBox.Show("FINISH");
+                result = testFact.GetResult();
+
+                testSave = new TTestSave(testFact);
+
+                string path = testSave.Save();
+
+                label_PredispositionName.Text = result.data[0].predisposition.title;
+                label_PredispositionDescription.Text = result.data[0].description + "\n" + result.data[0].predisposition.details;
+                label_PredispositionScore.Text = result.data[0].score.ToString();
+
+                label_filepath.Text = path;
+
+                if (result.data[0].score == result.data[1].score)
+                {
+                    button_MoreResult.Text = "Есть ещё результат(-ы) с такими же баллами";
+                    button_MoreResult.Font = new Font("Segoe UI", 10.0F);
+                }
+
+
                 groupBox_Question.Visible = false;
                 groupBox_Result.Visible = true;
-
-                TTestSave testSave = new TTestSave(testFact);
-                MessageBox.Show(testSave.Save());
             }
         }
 
@@ -140,6 +162,18 @@ namespace PsychologicalTestPracic
                     answersVariants[i].Checked = false;
                 }
             }
+        }
+
+        private void button_MoreResult_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < result.data.Count; i++)
+            {
+                TResultItem item = result.data[i];
+                this.dataGridView.Rows.Add(item.predisposition.title, item.score.ToString(), item.description, item.predisposition.details);
+            }
+
+            groupBox_Result.Visible = false;
+            groupBox_ResultMore.Visible = true;
         }
     }
 }

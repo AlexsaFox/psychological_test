@@ -37,6 +37,8 @@ namespace Practic_2.core
 
             this.AddInterpretationToResult(result);
 
+            result.SortByScore();
+
             return result;
         }
 
