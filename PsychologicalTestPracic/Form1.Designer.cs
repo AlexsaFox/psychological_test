@@ -30,11 +30,19 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             label_Title = new Label();
             groupBox_Start = new GroupBox();
+            label_Grade = new Label();
+            label_Age = new Label();
+            label_Surname = new Label();
+            label_Name = new Label();
             edit_Grade = new NumericUpDown();
             edit_Age = new NumericUpDown();
             edit_Surname = new TextBox();
@@ -60,11 +68,11 @@
             label_ResultTitle = new Label();
             groupBox_ResultMore = new GroupBox();
             dataGridView = new DataGridView();
-            label_ResultTitle_more = new Label();
             CollumnName = new DataGridViewTextBoxColumn();
             Score = new DataGridViewTextBoxColumn();
             ScoreDescription = new DataGridViewTextBoxColumn();
             Description = new DataGridViewTextBoxColumn();
+            label_ResultTitle_more = new Label();
             groupBox_Start.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)edit_Grade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)edit_Age).BeginInit();
@@ -78,7 +86,8 @@
             // label_Title
             // 
             label_Title.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label_Title.Font = new Font("Segoe UI", 30F);
+            label_Title.Font = new Font("Montserrat Alternates", 30F);
+            label_Title.ForeColor = Color.FromArgb(92, 76, 71);
             label_Title.Location = new Point(-7, 0);
             label_Title.Name = "label_Title";
             label_Title.Size = new Size(1524, 85);
@@ -88,75 +97,120 @@
             // 
             // groupBox_Start
             // 
+            groupBox_Start.BackColor = Color.Transparent;
+            groupBox_Start.Controls.Add(label_Grade);
+            groupBox_Start.Controls.Add(label_Age);
+            groupBox_Start.Controls.Add(label_Surname);
+            groupBox_Start.Controls.Add(label_Name);
             groupBox_Start.Controls.Add(edit_Grade);
             groupBox_Start.Controls.Add(edit_Age);
             groupBox_Start.Controls.Add(edit_Surname);
             groupBox_Start.Controls.Add(edit_Name);
             groupBox_Start.Controls.Add(button_Next);
-            groupBox_Start.Font = new Font("Segoe UI", 20F);
+            groupBox_Start.Font = new Font("Montserrat Alternates", 20F);
+            groupBox_Start.ForeColor = Color.FromArgb(92, 76, 71);
             groupBox_Start.Location = new Point(31, 229);
             groupBox_Start.Name = "groupBox_Start";
-            groupBox_Start.Padding = new Padding(40, 50, 40, 3);
+            groupBox_Start.Padding = new Padding(60, 80, 60, 3);
             groupBox_Start.Size = new Size(450, 438);
             groupBox_Start.TabIndex = 1;
             groupBox_Start.TabStop = false;
+            // 
+            // label_Grade
+            // 
+            label_Grade.Font = new Font("Montserrat Alternates", 15F);
+            label_Grade.Location = new Point(106, 254);
+            label_Grade.Name = "label_Grade";
+            label_Grade.Size = new Size(142, 34);
+            label_Grade.TabIndex = 8;
+            label_Grade.Text = "Класс";
+            label_Grade.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label_Age
+            // 
+            label_Age.Font = new Font("Montserrat Alternates", 15F);
+            label_Age.Location = new Point(106, 202);
+            label_Age.Name = "label_Age";
+            label_Age.Size = new Size(142, 34);
+            label_Age.TabIndex = 7;
+            label_Age.Text = "Возраст";
+            label_Age.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label_Surname
+            // 
+            label_Surname.Font = new Font("Montserrat Alternates", 15F);
+            label_Surname.Location = new Point(106, 148);
+            label_Surname.Name = "label_Surname";
+            label_Surname.Size = new Size(142, 34);
+            label_Surname.TabIndex = 6;
+            label_Surname.Text = "Фамилия";
+            label_Surname.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label_Name
+            // 
+            label_Name.Font = new Font("Montserrat Alternates", 15F);
+            label_Name.Location = new Point(106, 98);
+            label_Name.Name = "label_Name";
+            label_Name.Size = new Size(142, 34);
+            label_Name.TabIndex = 5;
+            label_Name.Text = "Имя";
+            label_Name.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // edit_Grade
             // 
             edit_Grade.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             edit_Grade.BorderStyle = BorderStyle.None;
-            edit_Grade.Font = new Font("Segoe UI", 15F);
-            edit_Grade.Location = new Point(86, 223);
-            edit_Grade.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            edit_Grade.Font = new Font("Montserrat Alternates", 15F);
+            edit_Grade.ForeColor = Color.FromArgb(92, 76, 71);
+            edit_Grade.Location = new Point(254, 253);
             edit_Grade.Name = "edit_Grade";
-            edit_Grade.Size = new Size(271, 37);
+            edit_Grade.Size = new Size(83, 34);
             edit_Grade.TabIndex = 4;
-            edit_Grade.Value = new decimal(new int[] { 12, 0, 0, 0 });
             // 
             // edit_Age
             // 
             edit_Age.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             edit_Age.BorderStyle = BorderStyle.None;
-            edit_Age.Font = new Font("Segoe UI", 15F);
-            edit_Age.Location = new Point(86, 171);
-            edit_Age.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            edit_Age.Font = new Font("Montserrat Alternates", 15F);
+            edit_Age.ForeColor = Color.FromArgb(92, 76, 71);
+            edit_Age.Location = new Point(254, 201);
             edit_Age.Name = "edit_Age";
-            edit_Age.Size = new Size(271, 37);
+            edit_Age.Size = new Size(83, 34);
             edit_Age.TabIndex = 3;
-            edit_Age.Value = new decimal(new int[] { 18, 0, 0, 0 });
             // 
             // edit_Surname
             // 
             edit_Surname.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             edit_Surname.BorderStyle = BorderStyle.None;
-            edit_Surname.Font = new Font("Segoe UI", 15F);
-            edit_Surname.Location = new Point(86, 120);
+            edit_Surname.Font = new Font("Montserrat Alternates", 15F);
+            edit_Surname.ForeColor = Color.FromArgb(92, 76, 71);
+            edit_Surname.Location = new Point(254, 150);
             edit_Surname.Name = "edit_Surname";
-            edit_Surname.PlaceholderText = "фамилия";
-            edit_Surname.Size = new Size(271, 34);
+            edit_Surname.Size = new Size(83, 31);
             edit_Surname.TabIndex = 2;
-            edit_Surname.Text = "fox";
             // 
             // edit_Name
             // 
             edit_Name.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             edit_Name.BorderStyle = BorderStyle.None;
-            edit_Name.Font = new Font("Segoe UI", 15F);
-            edit_Name.Location = new Point(86, 70);
+            edit_Name.Font = new Font("Montserrat Alternates", 15F);
+            edit_Name.ForeColor = Color.FromArgb(92, 76, 71);
+            edit_Name.Location = new Point(254, 100);
             edit_Name.Name = "edit_Name";
-            edit_Name.PlaceholderText = "имя";
-            edit_Name.Size = new Size(271, 34);
+            edit_Name.Size = new Size(83, 31);
             edit_Name.TabIndex = 1;
-            edit_Name.Text = "alex";
             // 
             // button_Next
             // 
             button_Next.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button_Next.BackColor = SystemColors.ButtonHighlight;
-            button_Next.Font = new Font("Segoe UI", 20F);
-            button_Next.Location = new Point(60, 323);
+            button_Next.BackColor = Color.FromArgb(131, 213, 132);
+            button_Next.FlatAppearance.BorderColor = Color.FromArgb(0, 64, 0);
+            button_Next.FlatAppearance.BorderSize = 0;
+            button_Next.FlatStyle = FlatStyle.Flat;
+            button_Next.Font = new Font("Montserrat Alternates Medium", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            button_Next.Location = new Point(80, 323);
             button_Next.Name = "button_Next";
-            button_Next.Size = new Size(321, 59);
+            button_Next.Size = new Size(281, 59);
             button_Next.TabIndex = 0;
             button_Next.Text = "ДАЛЬШЕ";
             button_Next.UseVisualStyleBackColor = false;
@@ -164,10 +218,12 @@
             // 
             // groupBox_Description
             // 
+            groupBox_Description.BackColor = Color.Transparent;
             groupBox_Description.Controls.Add(label_Description);
             groupBox_Description.Controls.Add(label_QuestCount);
             groupBox_Description.Controls.Add(button_Start);
             groupBox_Description.Font = new Font("Segoe UI", 20F);
+            groupBox_Description.ForeColor = Color.FromArgb(92, 76, 71);
             groupBox_Description.Location = new Point(520, 229);
             groupBox_Description.Name = "groupBox_Description";
             groupBox_Description.Padding = new Padding(40, 50, 40, 3);
@@ -179,7 +235,8 @@
             // label_Description
             // 
             label_Description.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label_Description.Font = new Font("Segoe UI", 15F);
+            label_Description.Font = new Font("Montserrat Alternates", 15F);
+            label_Description.ForeColor = Color.FromArgb(92, 76, 71);
             label_Description.Location = new Point(55, 70);
             label_Description.Name = "label_Description";
             label_Description.Size = new Size(352, 190);
@@ -190,7 +247,8 @@
             // label_QuestCount
             // 
             label_QuestCount.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label_QuestCount.Font = new Font("Segoe UI", 15F);
+            label_QuestCount.Font = new Font("Montserrat Alternates", 15F);
+            label_QuestCount.ForeColor = Color.FromArgb(92, 76, 71);
             label_QuestCount.Location = new Point(70, 272);
             label_QuestCount.Name = "label_QuestCount";
             label_QuestCount.Size = new Size(321, 38);
@@ -201,8 +259,10 @@
             // button_Start
             // 
             button_Start.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button_Start.BackColor = SystemColors.ButtonHighlight;
-            button_Start.Font = new Font("Segoe UI", 20F);
+            button_Start.BackColor = Color.FromArgb(131, 213, 132);
+            button_Start.FlatAppearance.BorderSize = 0;
+            button_Start.FlatStyle = FlatStyle.Flat;
+            button_Start.Font = new Font("Montserrat Alternates Medium", 19.7999973F, FontStyle.Bold);
             button_Start.Location = new Point(60, 323);
             button_Start.Name = "button_Start";
             button_Start.Size = new Size(321, 59);
@@ -213,6 +273,7 @@
             // 
             // groupBox_Question
             // 
+            groupBox_Question.BackColor = Color.Transparent;
             groupBox_Question.Controls.Add(progressBar_Questions);
             groupBox_Question.Controls.Add(button_Answer);
             groupBox_Question.Controls.Add(radioButton_AnswerText3);
@@ -220,10 +281,11 @@
             groupBox_Question.Controls.Add(radioButton_AnswerText1);
             groupBox_Question.Controls.Add(label_QuestionText);
             groupBox_Question.Font = new Font("Segoe UI", 20F);
-            groupBox_Question.Location = new Point(31, 692);
+            groupBox_Question.ForeColor = Color.FromArgb(92, 76, 71);
+            groupBox_Question.Location = new Point(1012, 229);
             groupBox_Question.Name = "groupBox_Question";
             groupBox_Question.Padding = new Padding(40, 50, 40, 0);
-            groupBox_Question.Size = new Size(450, 438);
+            groupBox_Question.Size = new Size(450, 552);
             groupBox_Question.TabIndex = 6;
             groupBox_Question.TabStop = false;
             groupBox_Question.Visible = false;
@@ -231,7 +293,8 @@
             // progressBar_Questions
             // 
             progressBar_Questions.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            progressBar_Questions.Location = new Point(0, 397);
+            progressBar_Questions.BackColor = Color.FromArgb(131, 213, 132);
+            progressBar_Questions.Location = new Point(0, 511);
             progressBar_Questions.Name = "progressBar_Questions";
             progressBar_Questions.Size = new Size(450, 41);
             progressBar_Questions.TabIndex = 7;
@@ -239,9 +302,11 @@
             // button_Answer
             // 
             button_Answer.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button_Answer.BackColor = SystemColors.ButtonHighlight;
-            button_Answer.Font = new Font("Segoe UI", 20F);
-            button_Answer.Location = new Point(60, 326);
+            button_Answer.BackColor = Color.FromArgb(131, 213, 132);
+            button_Answer.FlatAppearance.BorderSize = 0;
+            button_Answer.FlatStyle = FlatStyle.Flat;
+            button_Answer.Font = new Font("Montserrat Alternates Medium", 19.7999973F, FontStyle.Bold);
+            button_Answer.Location = new Point(60, 440);
             button_Answer.Name = "button_Answer";
             button_Answer.Size = new Size(321, 59);
             button_Answer.TabIndex = 10;
@@ -252,10 +317,14 @@
             // radioButton_AnswerText3
             // 
             radioButton_AnswerText3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            radioButton_AnswerText3.Font = new Font("Segoe UI", 15F);
-            radioButton_AnswerText3.Location = new Point(27, 261);
+            radioButton_AnswerText3.FlatAppearance.BorderColor = Color.FromArgb(192, 0, 192);
+            radioButton_AnswerText3.FlatAppearance.BorderSize = 0;
+            radioButton_AnswerText3.FlatAppearance.CheckedBackColor = Color.FromArgb(0, 192, 0);
+            radioButton_AnswerText3.Font = new Font("Montserrat Alternates", 14.999999F);
+            radioButton_AnswerText3.Location = new Point(27, 333);
             radioButton_AnswerText3.Name = "radioButton_AnswerText3";
-            radioButton_AnswerText3.Size = new Size(380, 44);
+            radioButton_AnswerText3.Padding = new Padding(10, 0, 0, 0);
+            radioButton_AnswerText3.Size = new Size(380, 80);
             radioButton_AnswerText3.TabIndex = 9;
             radioButton_AnswerText3.TabStop = true;
             radioButton_AnswerText3.Text = "*answer_text*";
@@ -265,10 +334,11 @@
             // radioButton_AnswerText2
             // 
             radioButton_AnswerText2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            radioButton_AnswerText2.Font = new Font("Segoe UI", 15F);
-            radioButton_AnswerText2.Location = new Point(27, 211);
+            radioButton_AnswerText2.Font = new Font("Montserrat Alternates", 14.999999F);
+            radioButton_AnswerText2.Location = new Point(27, 247);
             radioButton_AnswerText2.Name = "radioButton_AnswerText2";
-            radioButton_AnswerText2.Size = new Size(380, 44);
+            radioButton_AnswerText2.Padding = new Padding(10, 0, 0, 0);
+            radioButton_AnswerText2.Size = new Size(380, 80);
             radioButton_AnswerText2.TabIndex = 8;
             radioButton_AnswerText2.TabStop = true;
             radioButton_AnswerText2.Text = "*answer_text*";
@@ -278,19 +348,22 @@
             // radioButton_AnswerText1
             // 
             radioButton_AnswerText1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            radioButton_AnswerText1.Font = new Font("Segoe UI", 15F);
+            radioButton_AnswerText1.BackColor = Color.Transparent;
+            radioButton_AnswerText1.Font = new Font("Montserrat Alternates", 14.999999F);
             radioButton_AnswerText1.Location = new Point(27, 161);
             radioButton_AnswerText1.Name = "radioButton_AnswerText1";
-            radioButton_AnswerText1.Size = new Size(380, 44);
+            radioButton_AnswerText1.Padding = new Padding(10, 0, 0, 0);
+            radioButton_AnswerText1.Size = new Size(380, 80);
             radioButton_AnswerText1.TabIndex = 7;
             radioButton_AnswerText1.TabStop = true;
             radioButton_AnswerText1.Text = "*answer_text*";
             radioButton_AnswerText1.TextAlign = ContentAlignment.MiddleCenter;
-            radioButton_AnswerText1.UseVisualStyleBackColor = true;
+            radioButton_AnswerText1.UseVisualStyleBackColor = false;
             // 
             // label_QuestionText
             // 
             label_QuestionText.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label_QuestionText.Font = new Font("Montserrat Alternates", 19.7999973F);
             label_QuestionText.Location = new Point(27, 50);
             label_QuestionText.Name = "label_QuestionText";
             label_QuestionText.Size = new Size(380, 108);
@@ -300,6 +373,7 @@
             // 
             // groupBox_Result
             // 
+            groupBox_Result.BackColor = Color.Transparent;
             groupBox_Result.Controls.Add(label_filepath);
             groupBox_Result.Controls.Add(label_PredispositionDescription);
             groupBox_Result.Controls.Add(label_PredispositionScore);
@@ -307,6 +381,7 @@
             groupBox_Result.Controls.Add(button_MoreResult);
             groupBox_Result.Controls.Add(label_ResultTitle);
             groupBox_Result.Font = new Font("Segoe UI", 20F);
+            groupBox_Result.ForeColor = Color.FromArgb(92, 76, 71);
             groupBox_Result.Location = new Point(520, 692);
             groupBox_Result.Name = "groupBox_Result";
             groupBox_Result.Padding = new Padding(0);
@@ -318,21 +393,22 @@
             // label_filepath
             // 
             label_filepath.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label_filepath.BackColor = Color.FromArgb(255, 253, 241);
             label_filepath.BorderStyle = BorderStyle.None;
-            label_filepath.Font = new Font("Segoe UI", 10F);
+            label_filepath.Font = new Font("Montserrat Alternates", 10F);
             label_filepath.Location = new Point(3, 388);
             label_filepath.Name = "label_filepath";
             label_filepath.ReadOnly = true;
-            label_filepath.Size = new Size(444, 23);
+            label_filepath.Size = new Size(444, 21);
             label_filepath.TabIndex = 5;
             // 
             // label_PredispositionDescription
             // 
-            label_PredispositionDescription.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label_PredispositionDescription.Font = new Font("Segoe UI", 15F);
-            label_PredispositionDescription.Location = new Point(95, 211);
+            label_PredispositionDescription.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label_PredispositionDescription.Font = new Font("Montserrat Alternates", 12F);
+            label_PredispositionDescription.Location = new Point(60, 211);
             label_PredispositionDescription.Name = "label_PredispositionDescription";
-            label_PredispositionDescription.Size = new Size(296, 94);
+            label_PredispositionDescription.Size = new Size(321, 94);
             label_PredispositionDescription.TabIndex = 4;
             label_PredispositionDescription.Text = "*pred_desc_1*";
             label_PredispositionDescription.TextAlign = ContentAlignment.MiddleCenter;
@@ -340,10 +416,10 @@
             // label_PredispositionScore
             // 
             label_PredispositionScore.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label_PredispositionScore.Font = new Font("Segoe UI", 10F);
-            label_PredispositionScore.Location = new Point(95, 182);
+            label_PredispositionScore.Font = new Font("Montserrat Alternates", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label_PredispositionScore.Location = new Point(60, 168);
             label_PredispositionScore.Name = "label_PredispositionScore";
-            label_PredispositionScore.Size = new Size(296, 29);
+            label_PredispositionScore.Size = new Size(321, 29);
             label_PredispositionScore.TabIndex = 3;
             label_PredispositionScore.Text = "*pred_score_1*";
             label_PredispositionScore.TextAlign = ContentAlignment.MiddleCenter;
@@ -351,10 +427,10 @@
             // label_PredispositionName
             // 
             label_PredispositionName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label_PredispositionName.Font = new Font("Segoe UI", 15F);
-            label_PredispositionName.Location = new Point(95, 116);
+            label_PredispositionName.Font = new Font("Montserrat Alternates", 14.999999F);
+            label_PredispositionName.Location = new Point(60, 116);
             label_PredispositionName.Name = "label_PredispositionName";
-            label_PredispositionName.Size = new Size(296, 52);
+            label_PredispositionName.Size = new Size(321, 52);
             label_PredispositionName.TabIndex = 2;
             label_PredispositionName.Text = "*pred_name_1*";
             label_PredispositionName.TextAlign = ContentAlignment.MiddleCenter;
@@ -362,11 +438,13 @@
             // button_MoreResult
             // 
             button_MoreResult.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button_MoreResult.BackColor = SystemColors.ButtonHighlight;
-            button_MoreResult.Font = new Font("Segoe UI", 20F);
+            button_MoreResult.BackColor = Color.FromArgb(131, 213, 132);
+            button_MoreResult.FlatAppearance.BorderSize = 0;
+            button_MoreResult.FlatStyle = FlatStyle.Flat;
+            button_MoreResult.Font = new Font("Montserrat Alternates Medium", 19.7999973F, FontStyle.Bold);
             button_MoreResult.Location = new Point(60, 323);
             button_MoreResult.Name = "button_MoreResult";
-            button_MoreResult.Size = new Size(361, 59);
+            button_MoreResult.Size = new Size(321, 59);
             button_MoreResult.TabIndex = 1;
             button_MoreResult.Text = "ЕЩЁ";
             button_MoreResult.UseVisualStyleBackColor = false;
@@ -375,6 +453,7 @@
             // label_ResultTitle
             // 
             label_ResultTitle.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label_ResultTitle.Font = new Font("Montserrat Alternates", 19.7999973F);
             label_ResultTitle.Location = new Point(3, 26);
             label_ResultTitle.Name = "label_ResultTitle";
             label_ResultTitle.Size = new Size(444, 63);
@@ -384,89 +463,127 @@
             // 
             // groupBox_ResultMore
             // 
+            groupBox_ResultMore.BackColor = Color.Transparent;
             groupBox_ResultMore.Controls.Add(dataGridView);
             groupBox_ResultMore.Controls.Add(label_ResultTitle_more);
             groupBox_ResultMore.Font = new Font("Segoe UI", 20F);
-            groupBox_ResultMore.Location = new Point(1012, 692);
+            groupBox_ResultMore.ForeColor = Color.FromArgb(92, 76, 71);
+            groupBox_ResultMore.Location = new Point(31, 718);
             groupBox_ResultMore.Name = "groupBox_ResultMore";
-            groupBox_ResultMore.Padding = new Padding(0);
-            groupBox_ResultMore.Size = new Size(450, 438);
+            groupBox_ResultMore.Padding = new Padding(5, 0, 5, 0);
+            groupBox_ResultMore.Size = new Size(450, 412);
             groupBox_ResultMore.TabIndex = 7;
             groupBox_ResultMore.TabStop = false;
             groupBox_ResultMore.Visible = false;
             // 
             // dataGridView
             // 
-            dataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 15F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 253, 241);
+            dataGridViewCellStyle1.Font = new Font("Montserrat Alternates", 10F);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            dataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView.BackgroundColor = Color.FromArgb(131, 213, 132);
+            dataGridView.BorderStyle = BorderStyle.None;
+            dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(174, 165, 156);
+            dataGridViewCellStyle2.Font = new Font("Montserrat Alternates", 15F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(131, 213, 132);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.Columns.AddRange(new DataGridViewColumn[] { CollumnName, Score, ScoreDescription, Description });
-            dataGridView.Location = new Point(3, 116);
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(255, 253, 241);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(92, 76, 71);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(131, 213, 132);
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dataGridView.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView.EnableHeadersVisualStyles = false;
+            dataGridView.GridColor = Color.FromArgb(92, 76, 71);
+            dataGridView.Location = new Point(8, 116);
             dataGridView.Name = "dataGridView";
-            dataGridView.RowHeadersWidth = 51;
-            dataGridView.Size = new Size(447, 260);
+            dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(174, 165, 156);
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(131, 213, 132);
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridView.RowHeadersWidth = 50;
+            dataGridViewCellStyle9.BackColor = Color.FromArgb(255, 253, 241);
+            dataGridViewCellStyle9.Font = new Font("Montserrat Alternates", 10F);
+            dataGridViewCellStyle9.ForeColor = Color.FromArgb(92, 76, 71);
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(131, 213, 132);
+            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridView.Size = new Size(434, 234);
             dataGridView.TabIndex = 10;
-            // 
-            // label_ResultTitle_more
-            // 
-            label_ResultTitle_more.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label_ResultTitle_more.Location = new Point(3, 50);
-            label_ResultTitle_more.Name = "label_ResultTitle_more";
-            label_ResultTitle_more.Size = new Size(444, 63);
-            label_ResultTitle_more.TabIndex = 0;
-            label_ResultTitle_more.Text = "РЕЗУЛЬТАТ";
-            label_ResultTitle_more.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // CollumnName
             // 
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            CollumnName.DefaultCellStyle = dataGridViewCellStyle2;
+            CollumnName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Font = new Font("Montserrat Alternates", 10F);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            CollumnName.DefaultCellStyle = dataGridViewCellStyle3;
             CollumnName.HeaderText = "Предрасположенность";
             CollumnName.MinimumWidth = 6;
             CollumnName.Name = "CollumnName";
             // 
             // Score
             // 
-            Score.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10F);
-            Score.DefaultCellStyle = dataGridViewCellStyle3;
-            Score.HeaderText = "Результат";
+            Score.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Font = new Font("Montserrat Alternates", 10F);
+            Score.DefaultCellStyle = dataGridViewCellStyle4;
+            Score.HeaderText = "Баллы";
             Score.MinimumWidth = 6;
             Score.Name = "Score";
-            Score.Width = 153;
             // 
             // ScoreDescription
             // 
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            ScoreDescription.DefaultCellStyle = dataGridViewCellStyle4;
+            ScoreDescription.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.Font = new Font("Montserrat Alternates", 10F);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            ScoreDescription.DefaultCellStyle = dataGridViewCellStyle5;
             ScoreDescription.HeaderText = "Расшифровка результата";
             ScoreDescription.MinimumWidth = 6;
             ScoreDescription.Name = "ScoreDescription";
             // 
             // Description
             // 
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            Description.DefaultCellStyle = dataGridViewCellStyle5;
+            Description.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.Font = new Font("Montserrat Alternates", 10F);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            Description.DefaultCellStyle = dataGridViewCellStyle6;
             Description.HeaderText = "Описание";
             Description.MinimumWidth = 6;
             Description.Name = "Description";
+            // 
+            // label_ResultTitle_more
+            // 
+            label_ResultTitle_more.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label_ResultTitle_more.Font = new Font("Montserrat Alternates", 20F);
+            label_ResultTitle_more.Location = new Point(8, 50);
+            label_ResultTitle_more.Name = "label_ResultTitle_more";
+            label_ResultTitle_more.Size = new Size(434, 63);
+            label_ResultTitle_more.TabIndex = 0;
+            label_ResultTitle_more.Text = "РЕЗУЛЬТАТ";
+            label_ResultTitle_more.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 253, 241);
             ClientSize = new Size(1506, 1175);
             Controls.Add(groupBox_ResultMore);
             Controls.Add(groupBox_Result);
@@ -509,7 +626,6 @@
         private RadioButton radioButton_AnswerText3;
         private RadioButton radioButton_AnswerText2;
         private RadioButton radioButton_AnswerText1;
-        public ProgressBar progressBar_Questions;
         private ProgressBar progressBar1;
         private GroupBox groupBox_Result;
         private Label label_ResultTitle;
@@ -520,13 +636,17 @@
         private GroupBox groupBox_ResultMore;
         private Label label2;
         private Label label3;
-        private Button button1;
         private Label label_ResultTitle_more;
         private DataGridView dataGridView;
         private TextBox label_filepath;
+        private Label label_Name;
+        private Label label_Age;
+        private Label label_Surname;
+        private Label label_Grade;
         private DataGridViewTextBoxColumn CollumnName;
         private DataGridViewTextBoxColumn Score;
         private DataGridViewTextBoxColumn ScoreDescription;
         private DataGridViewTextBoxColumn Description;
+        private ProgressBar progressBar_Questions;
     }
 }

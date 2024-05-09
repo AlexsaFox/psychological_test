@@ -92,7 +92,7 @@ namespace PsychologicalTestPracic
             {
                 answersVariants[i].Text = answers[i].text;
             }
-            if (testFact.chosen_answers.Count + 1 == test.questions.Count)
+            if (testFact.chosenAnswers.Count + 1 == test.questions.Count)
             {
                 button_Answer.Text = "ЗАВЕРШИТЬ";
             }
@@ -111,7 +111,7 @@ namespace PsychologicalTestPracic
 
             if (!flagIsEveryone)
             {
-                find_and_add_checked(test.questions[testFact.chosen_answers.Count].answers);
+                find_and_add_checked(test.questions[testFact.chosenAnswers.Count].answers);
                 progressBar_Questions.Value++;
             }
             else
@@ -119,9 +119,9 @@ namespace PsychologicalTestPracic
                 MessageBox.Show("Нужно выбрать вариант ответа");
             }
 
-            if (testFact.chosen_answers.Count < test.questions.Count)
+            if (testFact.chosenAnswers.Count < test.questions.Count)
             {
-                TQuestion question = test.questions[testFact.chosen_answers.Count];
+                TQuestion question = test.questions[testFact.chosenAnswers.Count];
                 show_question(question);
             }
             else
@@ -166,6 +166,7 @@ namespace PsychologicalTestPracic
 
         private void button_MoreResult_Click(object sender, EventArgs e)
         {
+
             for (int i = 0; i < result.data.Count; i++)
             {
                 TResultItem item = result.data[i];
@@ -173,6 +174,22 @@ namespace PsychologicalTestPracic
             }
 
             groupBox_Result.Visible = false;
+            groupBox_ResultMore.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.dataGridView.Rows.Add("lalala", "15", "kfkfkf", "papaapap");
+            groupBox_Start.Visible = false;
+            groupBox_ResultMore.Visible = true;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.dataGridView.Rows.Add("lalala", "15", "kfkfkf", "papaapap");
+            this.dataGridView.Rows.Add("lalala", "15", "kfkfkf", "papaapap");
+            this.dataGridView.Rows.Add("lalala", "15", "kfkfkf", "papaapap");
+            groupBox_Start.Visible = false;
             groupBox_ResultMore.Visible = true;
         }
     }

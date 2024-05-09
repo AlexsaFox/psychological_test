@@ -23,9 +23,9 @@ namespace Practic_2.core
             StreamWriter file = new StreamWriter(path);
 
             
-            for (int i = 0; i < testFact.chosen_answers.Count; i++)
+            for (int i = 0; i < testFact.chosenAnswers.Count; i++)
             {
-                file.WriteLine($"{i + 1} - {testFact.chosen_answers[i].text}");
+                file.WriteLine($"{i + 1} - {testFact.chosenAnswers[i].text}");
             }
             file.WriteLine("___результат___");
             for (int i = 0; i < result.data.Count; i++)

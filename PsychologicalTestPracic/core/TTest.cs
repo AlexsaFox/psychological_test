@@ -27,7 +27,7 @@ namespace Practic_2.core
         }
 
         //добавление вопросов в тест
-        public TQuestion add_question(string text) 
+        public TQuestion AddQuestion(string text) 
         {
             for (int i = 0; i < questions.Count; i++) 
             {
@@ -42,7 +42,7 @@ namespace Practic_2.core
         }
 
         // добавление предрасположенностей в тест
-        public TPredisposition add_predisposition(string title, string details) 
+        public TPredisposition AddPredisposition(string title, string details) 
         {
             for(int i = 0; i < predispositions.Count;i++)
             {

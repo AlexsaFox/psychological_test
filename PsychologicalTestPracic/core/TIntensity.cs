@@ -45,7 +45,7 @@ namespace Practic_2.core
         }
 
         // получение интенсивности по счету
-        public TIntensityItem get_item_by_score (int score) 
+        public TIntensityItem GetItemByScore (int score) 
         {
             if (score < 0)
             {

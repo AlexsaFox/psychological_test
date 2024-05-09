@@ -69,7 +69,7 @@ namespace Practic_2.core
             foreach (JsonElement question in questions)
             {
                 string textQ = question.GetProperty("text").GetString();
-                TQuestion questionItem = test.add_question(textQ);
+                TQuestion questionItem = test.AddQuestion(textQ);
                 FillAnswersForQuestion(question, questionItem);
             }
         }
@@ -81,7 +81,7 @@ namespace Practic_2.core
             {
                 string titleP = predisposition.GetProperty("title").GetString();
                 string details = predisposition.GetProperty("details").GetString();
-                TPredisposition predispositionItem = test.add_predisposition(titleP, details);
+                TPredisposition predispositionItem = test.AddPredisposition(titleP, details);
                 // ПРОВЕРКА ID
                 predispositionsId.Add(predispositionItem);
             }

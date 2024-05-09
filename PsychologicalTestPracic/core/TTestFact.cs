@@ -12,20 +12,20 @@ namespace Practic_2.core
         public TPupil pupil;
         public DateTime datetime;
         public TTest test;
-        public List<TAnswer> chosen_answers;
+        public List<TAnswer> chosenAnswers;
         
         public TTestFact(TPupil pupil, TTest test)
         {
             this.pupil = pupil;
             this.test = test;
             this.datetime = DateTime.Now;
-            this.chosen_answers = new List<TAnswer>();
+            this.chosenAnswers = new List<TAnswer>();
         }
 
         // сохранение (добавление) отмеченных ответов
         public void AddChosenAnswer (TAnswer answer) 
         {
-            chosen_answers.Add(answer);
+            chosenAnswers.Add(answer);
         }
 
         // получение результата
@@ -59,9 +59,9 @@ namespace Practic_2.core
         // подсчет счета предрасположенностей
         private void CountPredisposition (TResult result)
         {
-            for (int i = 0; i < chosen_answers.Count; i++)
+            for (int i = 0; i < chosenAnswers.Count; i++)
             {
-                TAnswer cur_ans = chosen_answers[i];
+                TAnswer cur_ans = chosenAnswers[i];
                 TPredisposition cur_predisposition = test.mapper[cur_ans];
                 // ПРОВЕРИТЬ ПОТОМ НА СОХРАНЕНИЕ!!!!!!!!
                 TResultItem item = result.GetResultItemByPredisposition(cur_predisposition);
@@ -70,12 +70,12 @@ namespace Practic_2.core
         }
 
         // добавление интерпритации результата
-        private void AddInterpretationToResult(TResult result)
+        private void AddInterpretationToResult(TResult result)  
         {
             TIntensity intensity = test.intensity;
             foreach (var result_item in result.data)
             {
-                TIntensityItem item = intensity.get_item_by_score(result_item.score);
+                TIntensityItem item = intensity.GetItemByScore(result_item.score);
                 result_item.description = item.description;
             }
         }
