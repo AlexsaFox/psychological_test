@@ -16,7 +16,6 @@ namespace PsychologicalTestPracic
 
         public FormMain()
         {
-
             TTestLoader loader = new TTestLoader("test.json");
             test = loader.Load();
 
@@ -35,6 +34,7 @@ namespace PsychologicalTestPracic
             init_views();
         }
 
+        // initialization GroupBox (views)
         private void init_views()
         {
             for (int i = 0; i < views.Count; i++)
@@ -46,6 +46,7 @@ namespace PsychologicalTestPracic
             }
         }
 
+        // initialization Progress Bar for questions
         private void init_progressBar()
         {
             progressBar_Questions.Maximum = test.questions.Count;
@@ -55,6 +56,7 @@ namespace PsychologicalTestPracic
             progressBar_Questions.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Bottom);
         }
 
+        // button for save information about student and go to page with test description
         private void button_Next_Click(object sender, EventArgs e)
         {
             string name = edit_Name.Text;
@@ -75,6 +77,7 @@ namespace PsychologicalTestPracic
             }
         }
 
+        // button for start test
         private void button_Start_Click(object sender, EventArgs e)
         {
             testFact = new TTestFact(pupil, test);
@@ -84,6 +87,7 @@ namespace PsychologicalTestPracic
             groupBox_Question.Visible = true;
         }
 
+        // function for showing question with checking end of the test
         public void show_question(TQuestion question)
         {
             List<TAnswer> answers = question.answers;
@@ -98,6 +102,7 @@ namespace PsychologicalTestPracic
             }
         }
 
+        // button for save answer, showing new question and finish test
         private void button_Answer_Click(object sender, EventArgs e)
         {
             bool flagIsEveryone = true;
@@ -109,6 +114,7 @@ namespace PsychologicalTestPracic
                 }
             }
 
+            // save chosen answer
             if (!flagIsEveryone)
             {
                 find_and_add_checked(test.questions[testFact.chosenAnswers.Count].answers);
@@ -118,25 +124,23 @@ namespace PsychologicalTestPracic
             {
                 MessageBox.Show("Нужно выбрать вариант ответа");
             }
-
+            // go to next question
             if (testFact.chosenAnswers.Count < test.questions.Count)
             {
                 TQuestion question = test.questions[testFact.chosenAnswers.Count];
                 show_question(question);
             }
+            // if the test is finished -> show the greatest predisposition and give a link to the file with the result
             else
             {
-
-                //MessageBox.Show("FINISH");
                 result = testFact.GetResult();
-
                 testSave = new TTestSave(testFact);
 
                 string path = testSave.Save();
 
                 label_PredispositionName.Text = result.data[0].predisposition.title;
-                label_PredispositionDescription.Text = result.data[0].description + "\n" + result.data[0].predisposition.details;
-                label_PredispositionScore.Text = result.data[0].score.ToString();
+                label_PredispositionDescription.Text = result.data[0].predisposition.details;
+                label_PredispositionScore.Text = result.data[0].score.ToString() + " - " + result.data[0].description;
 
                 label_filepath.Text = path;
 
@@ -146,12 +150,12 @@ namespace PsychologicalTestPracic
                     button_MoreResult.Font = new Font("Segoe UI", 10.0F);
                 }
 
-
                 groupBox_Question.Visible = false;
                 groupBox_Result.Visible = true;
             }
         }
 
+        // function for adding the chosen answer
         public void find_and_add_checked(List<TAnswer> answers)
         {
             for (int i = 0; i < answersVariants.Count; i++)
@@ -164,32 +168,15 @@ namespace PsychologicalTestPracic
             }
         }
 
+        // button for showing all results
         private void button_MoreResult_Click(object sender, EventArgs e)
         {
-
             for (int i = 0; i < result.data.Count; i++)
             {
                 TResultItem item = result.data[i];
-                this.dataGridView.Rows.Add(item.predisposition.title, item.score.ToString(), item.description, item.predisposition.details);
+                this.dataGridView.Rows.Add(item.predisposition.title, item.score, item.description, item.predisposition.details);
             }
-
             groupBox_Result.Visible = false;
-            groupBox_ResultMore.Visible = true;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.dataGridView.Rows.Add("lalala", "15", "kfkfkf", "papaapap");
-            groupBox_Start.Visible = false;
-            groupBox_ResultMore.Visible = true;
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            this.dataGridView.Rows.Add("lalala", "15", "kfkfkf", "papaapap");
-            this.dataGridView.Rows.Add("lalala", "15", "kfkfkf", "papaapap");
-            this.dataGridView.Rows.Add("lalala", "15", "kfkfkf", "papaapap");
-            groupBox_Start.Visible = false;
             groupBox_ResultMore.Visible = true;
         }
     }

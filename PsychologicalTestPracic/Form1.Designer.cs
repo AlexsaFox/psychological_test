@@ -68,11 +68,11 @@
             label_ResultTitle = new Label();
             groupBox_ResultMore = new GroupBox();
             dataGridView = new DataGridView();
+            label_ResultTitle_more = new Label();
             CollumnName = new DataGridViewTextBoxColumn();
             Score = new DataGridViewTextBoxColumn();
             ScoreDescription = new DataGridViewTextBoxColumn();
             Description = new DataGridViewTextBoxColumn();
-            label_ResultTitle_more = new Label();
             groupBox_Start.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)edit_Grade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)edit_Age).BeginInit();
@@ -124,7 +124,7 @@
             label_Grade.Size = new Size(142, 34);
             label_Grade.TabIndex = 8;
             label_Grade.Text = "Класс";
-            label_Grade.TextAlign = ContentAlignment.MiddleLeft;
+            label_Grade.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label_Age
             // 
@@ -134,7 +134,7 @@
             label_Age.Size = new Size(142, 34);
             label_Age.TabIndex = 7;
             label_Age.Text = "Возраст";
-            label_Age.TextAlign = ContentAlignment.MiddleLeft;
+            label_Age.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label_Surname
             // 
@@ -144,7 +144,7 @@
             label_Surname.Size = new Size(142, 34);
             label_Surname.TabIndex = 6;
             label_Surname.Text = "Фамилия";
-            label_Surname.TextAlign = ContentAlignment.MiddleLeft;
+            label_Surname.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label_Name
             // 
@@ -154,50 +154,55 @@
             label_Name.Size = new Size(142, 34);
             label_Name.TabIndex = 5;
             label_Name.Text = "Имя";
-            label_Name.TextAlign = ContentAlignment.MiddleLeft;
+            label_Name.TextAlign = ContentAlignment.MiddleRight;
             // 
             // edit_Grade
             // 
             edit_Grade.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            edit_Grade.BorderStyle = BorderStyle.None;
+            edit_Grade.BackColor = Color.FromArgb(174, 165, 156);
+            edit_Grade.BorderStyle = BorderStyle.FixedSingle;
             edit_Grade.Font = new Font("Montserrat Alternates", 15F);
             edit_Grade.ForeColor = Color.FromArgb(92, 76, 71);
             edit_Grade.Location = new Point(254, 253);
             edit_Grade.Name = "edit_Grade";
-            edit_Grade.Size = new Size(83, 34);
+            edit_Grade.Size = new Size(83, 38);
             edit_Grade.TabIndex = 4;
             // 
             // edit_Age
             // 
             edit_Age.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            edit_Age.BorderStyle = BorderStyle.None;
+            edit_Age.BackColor = Color.FromArgb(174, 165, 156);
+            edit_Age.BorderStyle = BorderStyle.FixedSingle;
             edit_Age.Font = new Font("Montserrat Alternates", 15F);
             edit_Age.ForeColor = Color.FromArgb(92, 76, 71);
             edit_Age.Location = new Point(254, 201);
             edit_Age.Name = "edit_Age";
-            edit_Age.Size = new Size(83, 34);
+            edit_Age.Size = new Size(83, 38);
             edit_Age.TabIndex = 3;
             // 
             // edit_Surname
             // 
             edit_Surname.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            edit_Surname.BorderStyle = BorderStyle.None;
+            edit_Surname.BackColor = Color.FromArgb(174, 165, 156);
+            edit_Surname.BorderStyle = BorderStyle.FixedSingle;
             edit_Surname.Font = new Font("Montserrat Alternates", 15F);
             edit_Surname.ForeColor = Color.FromArgb(92, 76, 71);
             edit_Surname.Location = new Point(254, 150);
             edit_Surname.Name = "edit_Surname";
-            edit_Surname.Size = new Size(83, 31);
+            edit_Surname.Size = new Size(83, 38);
             edit_Surname.TabIndex = 2;
             // 
             // edit_Name
             // 
             edit_Name.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            edit_Name.BorderStyle = BorderStyle.None;
+            edit_Name.BackColor = Color.FromArgb(174, 165, 156);
+            edit_Name.BorderStyle = BorderStyle.FixedSingle;
             edit_Name.Font = new Font("Montserrat Alternates", 15F);
             edit_Name.ForeColor = Color.FromArgb(92, 76, 71);
             edit_Name.Location = new Point(254, 100);
             edit_Name.Name = "edit_Name";
-            edit_Name.Size = new Size(83, 31);
+            edit_Name.RightToLeft = RightToLeft.No;
+            edit_Name.Size = new Size(83, 38);
             edit_Name.TabIndex = 1;
             // 
             // button_Next
@@ -529,6 +534,17 @@
             dataGridView.Size = new Size(434, 234);
             dataGridView.TabIndex = 10;
             // 
+            // label_ResultTitle_more
+            // 
+            label_ResultTitle_more.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label_ResultTitle_more.Font = new Font("Montserrat Alternates", 20F);
+            label_ResultTitle_more.Location = new Point(8, 50);
+            label_ResultTitle_more.Name = "label_ResultTitle_more";
+            label_ResultTitle_more.Size = new Size(434, 63);
+            label_ResultTitle_more.TabIndex = 0;
+            label_ResultTitle_more.Text = "РЕЗУЛЬТАТ";
+            label_ResultTitle_more.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // CollumnName
             // 
             CollumnName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -541,12 +557,13 @@
             // 
             // Score
             // 
-            Score.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Score.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             dataGridViewCellStyle4.Font = new Font("Montserrat Alternates", 10F);
             Score.DefaultCellStyle = dataGridViewCellStyle4;
             Score.HeaderText = "Баллы";
             Score.MinimumWidth = 6;
             Score.Name = "Score";
+            Score.Width = 130;
             // 
             // ScoreDescription
             // 
@@ -567,17 +584,6 @@
             Description.HeaderText = "Описание";
             Description.MinimumWidth = 6;
             Description.Name = "Description";
-            // 
-            // label_ResultTitle_more
-            // 
-            label_ResultTitle_more.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label_ResultTitle_more.Font = new Font("Montserrat Alternates", 20F);
-            label_ResultTitle_more.Location = new Point(8, 50);
-            label_ResultTitle_more.Name = "label_ResultTitle_more";
-            label_ResultTitle_more.Size = new Size(434, 63);
-            label_ResultTitle_more.TabIndex = 0;
-            label_ResultTitle_more.Text = "РЕЗУЛЬТАТ";
-            label_ResultTitle_more.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FormMain
             // 
@@ -643,10 +649,10 @@
         private Label label_Age;
         private Label label_Surname;
         private Label label_Grade;
+        private ProgressBar progressBar_Questions;
         private DataGridViewTextBoxColumn CollumnName;
         private DataGridViewTextBoxColumn Score;
         private DataGridViewTextBoxColumn ScoreDescription;
         private DataGridViewTextBoxColumn Description;
-        private ProgressBar progressBar_Questions;
     }
 }

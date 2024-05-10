@@ -59,6 +59,10 @@ namespace Practic_2.core
                 string textA = answer.GetProperty("text").GetString();
                 TAnswer answerItem = questionItem.AddAnswer(textA);
                 // ПРОВЕРКА ID
+                if (answer.GetProperty("id").GetInt32() != answersId.Count + 1)
+                {
+                    throw new Exception(String.Format("Mistake in answer id"));
+                }
                 answersId.Add(answerItem);
             }
         }
@@ -83,6 +87,11 @@ namespace Practic_2.core
                 string details = predisposition.GetProperty("details").GetString();
                 TPredisposition predispositionItem = test.AddPredisposition(titleP, details);
                 // ПРОВЕРКА ID
+                if (predisposition.GetProperty("id").GetInt32() != predispositionsId.Count + 1)
+                {
+                    throw new Exception(String.Format("Mistake in predisposition id"));
+                }
+                
                 predispositionsId.Add(predispositionItem);
             }
         }
@@ -95,6 +104,16 @@ namespace Practic_2.core
                 int answerId = mapperElement.GetProperty("answer").GetInt32();
                 int predispositionId = mapperElement.GetProperty("predisposition").GetInt32();
                 // ПРОВЕРКА ID - (1, count)
+
+                if (answerId == 0 && answerId == answersId.Count)
+                {
+                    throw new Exception(String.Format("answerId out of range"));
+                }
+                if (predispositionId == 0 && predispositionId == predispositionsId.Count)
+                {
+                    throw new Exception(String.Format("predispositionId out of range"));
+                }
+
                 test.AddMapperItem(answersId[answerId - 1], predispositionsId[predispositionId - 1]);
             }
         }
